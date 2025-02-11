@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Pi USB Configuration</title>
+    <style>
+      body { font-family: Arial, sans-serif; margin: 40px; }
+      h1 { color: #333; }
+      label { display: block; margin-top: 10px; }
+      input[type=text], input[type=password] { width: 300px; padding: 5px; margin-top: 5px; }
+      input[type=submit] { margin-top: 20px; padding: 10px 20px; }
+    </style>
+</head>
+<body>
+    <h1>Pi USB Configuration</h1>
+    <form action="/cgi-bin/apply.cgi" method="post">
+        <h2>Wi-Fi Settings</h2>
+        <label for="ssid">SSID:</label>
+        <input type="text" id="ssid" name="ssid" required>
+        <label for="wifipassword">Wi-Fi Password:</label>
+        <input type="password" id="wifipassword" name="wifipassword" required>
+        
+        <h2>Web UI Credentials</h2>
+        <label for="username">Admin Username:</label>
+        <input type="text" id="username" name="username" required>
+        <label for="password">Admin Password:</label>
+        <input type="password" id="password" name="password" required>
+        
+        <h2>USB/IP Settings</h2>
+        <p>All plugged‑in USB devices are automatically exported.</p>
+        
+        <input type="submit" value="Apply Settings">
+    </form>
+</body>
+</html>

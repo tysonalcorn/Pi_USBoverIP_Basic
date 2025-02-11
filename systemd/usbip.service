@@ -1,0 +1,14 @@
+[Unit]
+Description=USB/IP Service and Auto-Bind All Devices
+After=network.target
+
+[Service]
+Type=oneshot
+# Start the usbip daemon (in the background) and then bind devices.
+ExecStart=/usr/sbin/usbipd -D
+# Wait a moment to let devices show up, then bind.
+ExecStartPost=/usr/local/bin/usbip_bind_all.sh
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target
