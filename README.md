@@ -13,7 +13,7 @@ This project sets up a Raspberry Pi Zero W as an open-source USB-over-IP server 
 
 - **bin/**
   - `usbip_bind_all.sh`: Script to enumerate and bind all plugged‑in USB devices via USB/IP.
-  - `net-manage.sh`: Script that checks for a Wi‑Fi connection on wlan0 and, if not found, brings up a hotspot so users can access the config page.
+  - `net-manage.sh`: Script that checks for an ethernet or Wi‑Fi connection on wlan0 and, if not found, brings up a hotspot so users can access the config page.
 
 - **systemd/**
   - `usbip.service`: Systemd service that starts the USB/IP daemon and runs the USB bind script.
