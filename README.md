@@ -13,7 +13,7 @@ This project sets up a Raspberry Pi Zero W as an open-source USB-over-IP server 
 
 - **bin/**
   - `usbip_bind_all.sh`: Script to enumerate and bind all plugged‑in USB devices via USB/IP.
-  - `wifi_hotspot.sh`: Script that checks for a Wi‑Fi connection on wlan0 and, if not found, brings up a hotspot so users can access the config page.
+  - `net-manage.sh`: Script that checks for a Wi‑Fi connection on wlan0 and, if not found, brings up a hotspot so users can access the config page.
 
 - **systemd/**
   - `usbip.service`: Systemd service that starts the USB/IP daemon and runs the USB bind script.
@@ -73,7 +73,7 @@ Assuming you have unzipped the `Pi_USBoverIP.zip` package, copy the files to the
   Copy the files from the `systemd/` directory to `/etc/systemd/system/`:
   ```bash
   sudo cp Pi_USBoverIP/systemd/usbip.service /etc/systemd/system/
-  sudo cp Pi_USBoverIP/systemd/wifi-hotspot.service /etc/systemd/system/
+  sudo cp Pi_USBoverIP/systemd/net-manage.service /etc/systemd/system/
   ```
   Then reload systemd and enable the services:
   ```bash
@@ -149,7 +149,7 @@ sudo reboot
   Check service logs with:
   ```bash
   sudo journalctl -u usbip.service
-  sudo journalctl -u wifi-hotspot.service
+  sudo journalctl -u net-manage.service
   ```
 - **USB/IP:**  
   Use `lsusb` and `usbip list -l` to verify devices are detected and bound.
