@@ -3,7 +3,7 @@
 This project sets up a Raspberry Pi Zero W as an open-source USB-over-IP server for industrial equipment maintenance/diagnosis. The system is designed to:
 
 - Automatically start USB/IP services at boot and bind all plugged‑in USB devices.
-- Connect to a known Wi‑Fi network. If no network is found, the Pi automatically starts a Wi‑Fi hotspot (using hostapd and dnsmasq) so that a user can access the configuration page.
+- Connect to an ethernet or known Wi‑Fi network. If no network is found, the Pi automatically starts a Wi‑Fi hotspot (using hostapd and dnsmasq) so that a user can access the configuration page.
 - Serve a simple web configuration page (with basic authentication) to update Wi‑Fi settings and Web UI credentials.
 - Be extensible for future security improvements (e.g., zero‑trust authentication).
 
