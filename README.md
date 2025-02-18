@@ -130,10 +130,10 @@ sudo reboot
 ## Operation
 
 - **Normal Mode:**  
-  When a known Wi‑Fi network is available, the Pi will join it and run USB/IP (exporting all connected USB devices).
+  When an ethernet connection or known Wi‑Fi network is available, the Pi will join it and run USB/IP (exporting all connected USB devices).
 
 - **Hotspot Mode:**  
-  If no known Wi‑Fi is detected, the Pi brings up a hotspot (SSID defined in `hostapd.conf`). Connect to the hotspot (default IP: `192.168.4.1`), then open a browser and navigate to `http://192.168.4.1/config.html` to adjust settings.
+  If no ethernet or known Wi‑Fi is detected, the Pi brings up a hotspot (SSID defined in `hostapd.conf`). Connect to the hotspot (default IP: `192.168.4.1`), then open a browser and navigate to `http://192.168.4.1/config.html` to adjust settings.
 
 - **USB/IP:**  
   Any USB device plugged into the Pi is automatically bound and exported via USB/IP. You can also rebind manually with:
