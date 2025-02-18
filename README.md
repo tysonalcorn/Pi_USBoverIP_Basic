@@ -17,7 +17,7 @@ This project sets up a Raspberry Pi Zero W as an open-source USB-over-IP server 
 
 - **systemd/**
   - `usbip.service`: Systemd service that starts the USB/IP daemon and runs the USB bind script.
-  - `wifi-hotspot.service`: Systemd service that runs the Wi‑Fi hotspot fallback script.
+  - `net-manage.service`: Systemd service that runs network management script.
 
 - **hostapd/**
   - `hostapd.conf`: Sample hostapd configuration file to set up the Pi as a hotspot.
@@ -65,8 +65,8 @@ Assuming you have unzipped the `Pi_USBoverIP.zip` package, copy the files to the
   Copy the files from the `bin/` directory to `/usr/local/bin/` and ensure they are executable:
   ```bash
   sudo cp Pi_USBoverIP/bin/usbip_bind_all.sh /usr/local/bin/
-  sudo cp Pi_USBoverIP/bin/wifi_hotspot.sh /usr/local/bin/
-  sudo chmod +x /usr/local/bin/usbip_bind_all.sh /usr/local/bin/wifi_hotspot.sh
+  sudo cp Pi_USBoverIP/bin/net-manage.sh /usr/local/bin/
+  sudo chmod +x /usr/local/bin/usbip_bind_all.sh /usr/local/bin/net-manage.sh
   ```
 
 - **Systemd Service Files:**  
@@ -79,7 +79,7 @@ Assuming you have unzipped the `Pi_USBoverIP.zip` package, copy the files to the
   ```bash
   sudo systemctl daemon-reload
   sudo systemctl enable usbip.service
-  sudo systemctl enable wifi-hotspot.service
+  sudo systemctl enable net-manage.service
   ```
 
 - **Hostapd Configuration:**  

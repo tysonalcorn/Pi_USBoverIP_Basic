@@ -1,0 +1,13 @@
+[Unit]
+Description=Manages network connections. First attempts connecting
+via eth0, then wlan0. If no connections are available, starts hotspot.
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/usr/local/bin/net-manage.sh
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target
